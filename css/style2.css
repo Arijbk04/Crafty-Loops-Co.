@@ -1,0 +1,253 @@
+/* Global Styles */
+body {
+    font-family: 'Caveat', cursive;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    background: url("../assets/back.png");
+}
+
+/* Header */
+.header {
+    background-color: #ffb6c1;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #d96fa5;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #e74c3c;
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 80px);
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #ffe6f0;
+    padding: 20px;
+    width: 200px;
+    border-right: 2px solid #f3cce3;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #d96fa5;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #fbe8f8;
+    color: #e74c3c;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.content h2 {
+    color: #d96fa5;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Products */
+.product-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.product {
+    background-color: #ffe6f0;
+    border: 2px solid #f3cce3;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product h4 {
+    color: #d96fa5;
+    margin: 10px 0;
+}
+
+.product p {
+    color: #555;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+    background-color: #fbe8f8;
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #f3cce3;
+}
+
+.footer p {
+    color: #d96fa5;
+    font-size: 1em;
+}
+/* Sticky note styles */
+.note-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.sticky-note {
+    background-color: #ffeb3b;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.sticky-note:hover {
+    transform: scale(1.05);
+}
+
+.sticky-note button {
+    margin-top: 10px;
+    background-color: #ffb6c1;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.sticky-note button:hover {
+    transform: scale(1.05);
+    background-color: #ff8da1;
+}
+
+
+/* Sticky note styles */
+.sticky-note {
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+sticky-note button:hover {
+    transform: scale(1.05);
+    background-color: #ff8da1;
+}
+.sticky-note:hover {
+    transform: scale(1.05);
+}
+
+.sticky-note button {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.sticky-note p {
+    flex-grow: 1;
+    margin: 0;
+}
+
+textarea.form-control {
+    font-size: 1rem;
+    border: 1px solid #ffcccb;
+    border-radius: 5px;
+}
+
+/* Note input and actions */
+.note-input {
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ffcccb;
+}
+
+.note-actions {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.note-actions button {
+    background-color: #ffb6c1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.note-actions button:hover {
+    background-color: #ff8da1;
+}

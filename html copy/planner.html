@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Crochet Corner - Daisy Crochet Co.</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style2.css"> <!-- Link to your existing CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            background: #f9f9f9;
+            font-family: 'Caveat', cursive;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin: 50px 0;
+            color: #75A47F;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            color: #75A47F;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            color: #F5DAD2;
+        }
+
+        nav a {
+            color: #75A47F;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FCFFE0;
+        }
+
+        .sidebar {
+            padding: 20px;
+            background-color: #FCFFE0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #75A47F;
+        }
+
+        .sticky-note, .project-tracking {
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #FCFFE0;
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-note:hover, .project-tracking:hover {
+            transform: scale(1.05);
+        }
+
+        .sticky-note {
+            background-color: #F5DAD2;
+        }
+
+        .project-tracking {
+            background-color: #75A47F;
+            color: white;
+        }
+
+        .btn {
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .note-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .note-grid .sticky-note {
+            background-color: #F5DAD2;
+            padding: 20px;
+        }
+
+        .btn-primary, .btn-info, .btn-success {
+            margin-top: 15px;
+        }
+
+        .project-list {
+            margin-top: 20px;
+        }
+
+        .project-item {
+            background-color: #75A47F;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-item:hover {
+            transform: scale(1.05);
+        }
+
+        .task-checkbox {
+            margin-right: 10px;
+        }
+
+        .project-tracking h2 {
+            color: #FCFFE0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>My Crochet Corner</h1>
+        <p>Plan, track, and organize your crochet projects</p>
+    
+        <nav>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Accueil</a></li>
+                <li><a href="products.html">Produits</a></li>
+                <li><a href="courses.html">Cours de Crochet</a></li>
+                <li><a href="patterns.html">Free Patterns</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="account.html">Mon compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container container my-5">
+        <div class="row">
+            <!-- Sticky Notes Section -->
+            <div class="col-lg-6 mb-4">
+                <div class="sticky-note">
+                    <h2>Choose Sticky Note Type</h2>
+                    <button id="toDoNoteBtn" class="btn btn-primary btn-lg mx-2">To-Do List</button>
+                    <button id="normalNoteBtn" class="btn btn-info btn-lg mx-2">Normal Sticky Note</button>
+
+                    <h2 class="mt-5">Sticky Notes</h2>
+                    <div class="note-grid" id="noteGrid">
+                        <!-- Sticky notes will be dynamically added here -->
+                    </div>
+
+                    <h3 class="mt-5">Write a new task</h3>
+                    <textarea class="form-control mb-3" id="newNoteInput" placeholder="Write your task here..."></textarea>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" id="addNoteBtn" class="btn btn-success btn-lg">Add Note</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Tracking Section -->
+            <div class="col-lg-6 mb-4">
+                <div class="project-tracking">
+                    <h2>Track Your Crochet Projects</h2>
+                    <input type="text" id="projectInput" class="form-control" placeholder="Enter Project Name">
+                    <button class="btn btn-light mt-3" id="addProjectBtn">Add Project</button>
+                    
+                    <div class="project-list" id="projectList">
+                        <!-- Dynamically added projects will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-pink text-white text-center py-3">
+        <p>&copy; 2024 Daisy Crochet Co. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript for sticky notes functionality
+        let isToDoNote = false;
+        const toDoNoteBtn = document.getElementById('toDoNoteBtn');
+        const normalNoteBtn = document.getElementById('normalNoteBtn');
+
+        toDoNoteBtn.addEventListener('click', function() {
+            isToDoNote = true;
+        });
+
+        normalNoteBtn.addEventListener('click', function() {
+            isToDoNote = false;
+        });
+
+        document.getElementById('addNoteBtn').addEventListener('click', function() {
+            const noteText = document.getElementById('newNoteInput').value;
+            if (noteText.trim() !== '') {
+                addNoteToGrid(noteText);
+                document.getElementById('newNoteInput').value = '';
+            } else {
+                alert('Please write a note before adding!');
+            }
+        });
+
+        function addNoteToGrid(noteText) {
+            const noteGrid = document.getElementById('noteGrid');
+            const noteDiv = document.createElement('div');
+            noteDiv.classList.add('sticky-note');
+
+            const taskContent = document.createElement('p');
+            taskContent.textContent = noteText;
+
+            if (isToDoNote) {
+                const taskCheckbox = document.createElement('input');
+                taskCheckbox.type = 'checkbox';
+                taskCheckbox.classList.add('task-checkbox');
+                taskCheckbox.addEventListener('change', function() {
+                    if (taskCheckbox.checked) {
+                        taskContent.style.textDecoration = 'line-through';
+                    } else {
+                        taskContent.style.textDecoration = 'none';
+                    }
+                });
+                noteDiv.appendChild(taskCheckbox);
+            }
+
+            const editButton = document.createElement('button');
+            editButton.classList.add('btn', 'btn-warning', 'btn-sm', 'mt-2');
+            editButton.textContent = 'Edit';
+            editButton.onclick = function() { editNote(noteDiv, taskContent); };
+
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('btn', 'btn-danger', 'btn-sm', 'mt-2', 'ml-2');
+            deleteButton.textContent = 'Delete';
+            deleteButton.onclick = function() { deleteNote(noteDiv); };
+
+            noteDiv.appendChild(taskContent);
+            noteDiv.appendChild(editButton);
+            noteDiv.appendChild(deleteButton);
+            noteGrid.appendChild(noteDiv);
+        }
+
+        function editNote(noteDiv, taskContent) {
+            const newText = prompt('Edit your note:', taskContent.textContent);
+            if (newText) {
+                taskContent.textContent = newText;
+            }
+        }
+
+        function deleteNote(noteDiv) {
+            noteDiv.remove();
+        }
+
+        // JavaScript for Project Tracking functionality
+        document.getElementById('addProjectBtn').addEventListener('click', function() {
+            const projectName = document.getElementById('projectInput').value;
+            if (projectName.trim() !== '') {
+                addProjectToList(projectName);
+                document.getElementById('projectInput').value = '';
+            } else {
+                alert('Please enter a project name before adding!');
+            }
+        });
+
+        function addProjectToList(projectName) {
+            const projectList = document.getElementById('projectList');
+            const projectItem = document.createElement('div');
+            projectItem.classList.add('project-item');
+            projectItem.textContent = projectName;
+            projectList.appendChild(projectItem);
+        }
+    </script>
+</body>
+</html>

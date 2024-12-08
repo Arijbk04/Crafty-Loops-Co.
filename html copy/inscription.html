@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy Crochet Co.</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Icons -->
+        <div class="image-container">
+            <img src="../assets/login.png" alt="Login" id="loginIcon" class="icon">
+        </div>
+        <div class="image-container">
+            <img src="../assets/signup.png" alt="Signup" id="signupIcon" class="icon">
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm" class="form-container">
+        <form action="#">
+            <center><legend>WELCOME BACK</legend></center>
+            <div>
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" name="email" required>
+            </div>
+            <div>
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" name="password" required>
+            </div>
+            <div>
+                <button type="submit">Login</button>
+                <button type="button" id="closeLogin">Close</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signupForm" class="form-container">
+        <form action="#">
+            <center><legend>WELCOME</legend></center>
+            <div>
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="first_name" required>
+            </div>
+            <div>
+                <label for="signupEmail">Email</label>
+                <input type="email" id="signupEmail" name="email" required>
+            </div>
+            <div>
+                <label for="signupPassword">Password</label>
+                <input type="password" id="signupPassword" name="password" required>
+            </div>
+            <div>
+                <button type="submit">Sign Up</button>
+                <button type="button" id="closeSignup">Close</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
